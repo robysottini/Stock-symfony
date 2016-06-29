@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Comprimido list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Marca</th>
+                <th>Principioactivo</th>
+                <th>Peso</th>
+                <th>Vencimiento</th>
+                <th>Lote</th>
+                <th>Cantidad</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for comprimido in comprimidos %}
+            <tr>
+                <td><a href="{{ path('comprimido_show', { 'id': comprimido.id }) }}">{{ comprimido.id }}</a></td>
+                <td>{{ comprimido.nombre }}</td>
+                <td>{{ comprimido.marca }}</td>
+                <td>{{ comprimido.principioActivo }}</td>
+                <td>{{ comprimido.peso }}</td>
+                <td>{% if comprimido.vencimiento %}{{ comprimido.vencimiento|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ comprimido.lote }}</td>
+                <td>{{ comprimido.cantidad }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('comprimido_show', { 'id': comprimido.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('comprimido_edit', { 'id': comprimido.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('comprimido_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

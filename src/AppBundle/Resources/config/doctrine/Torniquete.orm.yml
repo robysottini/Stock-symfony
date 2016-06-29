@@ -1,0 +1,24 @@
+AppBundle\Entity\Torniquete:
+    type: entity
+    table: torniquetes
+    repositoryClass: AppBundle\Repository\TorniqueteRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        cantidad:
+            type: integer
+    lifecycleCallbacks: {  }
+    manyToOne:
+        # Nombre del campo:
+        marca:
+            # Nombre de la clase entidad:
+            targetEntity: Marca
+            joinColumn:
+                # Llave foranea de la tabla agujas.
+                name: id
+                # Llave primaria de la tabla agujas.
+                referencedColumnName: id

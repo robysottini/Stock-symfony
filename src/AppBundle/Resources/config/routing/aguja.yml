@@ -1,0 +1,24 @@
+aguja_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Aguja:index" }
+    methods:  GET
+
+aguja_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Aguja:show" }
+    methods:  GET
+
+aguja_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Aguja:new" }
+    methods:  [GET, POST]
+
+aguja_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Aguja:edit" }
+    methods:  [GET, POST]
+
+aguja_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Aguja:delete" }
+    methods:  DELETE

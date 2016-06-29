@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>PrincipioActivo list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for principioActivo in principioActivos %}
+            <tr>
+                <td><a href="{{ path('principioactivo_show', { 'id': principioActivo.id }) }}">{{ principioActivo.id }}</a></td>
+                <td>{{ principioActivo.nombre }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('principioactivo_show', { 'id': principioActivo.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('principioactivo_edit', { 'id': principioActivo.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('principioactivo_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

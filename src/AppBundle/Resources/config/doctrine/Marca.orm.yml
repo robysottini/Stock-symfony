@@ -1,0 +1,15 @@
+AppBundle\Entity\Marca:
+    type: entity
+    table: marcas
+    repositoryClass: AppBundle\Repository\MarcaRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombre:
+            type: string
+            length: 100
+    lifecycleCallbacks: {  }

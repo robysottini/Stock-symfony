@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Torniquete</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ torniquete.id }}</td>
+            </tr>
+            <tr>
+                <th>Cantidad</th>
+                <td>{{ torniquete.cantidad }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('torniquete_index') }}" class="btn btn-primary">Volver a la lista</a>
+    <a href="{{ path('torniquete_edit', { 'id': torniquete.id }) }}" class="btn btn-primary">Editar</a>
+    {{ form_start(delete_form) }}
+        <input type="submit" value="Eliminar" class="btn btn-primary">
+    {{ form_end(delete_form) }}
+{% endblock %}

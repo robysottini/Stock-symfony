@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Guante</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ guante.id }}</td>
+            </tr>
+            <tr>
+                <th>Marca</th>
+                <td>{{ guante.marca }}</td>
+            </tr>
+            <tr>
+                <th>Descripcion</th>
+                <td>{{ guante.descripcion }}</td>
+            </tr>
+            <tr>
+                <th>Vencimiento</th>
+                <td>{% if guante.vencimiento %}{{ guante.vencimiento|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Libredetalco</th>
+                <td>{% if guante.libreDeTalco %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Lote</th>
+                <td>{{ guante.lote }}</td>
+            </tr>
+            <tr>
+                <th>Cantidad</th>
+                <td>{{ guante.cantidad }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('guante_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('guante_edit', { 'id': guante.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

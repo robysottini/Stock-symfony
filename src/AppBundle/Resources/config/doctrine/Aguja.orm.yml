@@ -1,0 +1,31 @@
+AppBundle\Entity\Aguja:
+    type: entity
+    table: agujas
+    repositoryClass: AppBundle\Repository\AgujaRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombre:
+            type: string
+            length: 100
+        capacidad:
+            type: float
+        vencimiento:
+            type: date
+        cantidad:
+            type: integer
+    lifecycleCallbacks: {  }
+    manyToOne:
+        # Nombre del campo:
+        marca:
+            # Nombre de la clase entidad:
+            targetEntity: Marca
+            joinColumn:
+                # Llave foranea de la tabla agujas.
+                name: id
+                # Llave primaria de la tabla agujas.
+                referencedColumnName: id

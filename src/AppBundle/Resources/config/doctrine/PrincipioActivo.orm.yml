@@ -1,0 +1,15 @@
+AppBundle\Entity\PrincipioActivo:
+    type: entity
+    table: principios_activos
+    repositoryClass: AppBundle\Repository\PrincipioActivoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombre:
+            type: string
+            length: 100
+    lifecycleCallbacks: {  }

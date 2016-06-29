@@ -1,0 +1,27 @@
+AppBundle\Entity\Guante:
+    type: entity
+    table: guantes
+    repositoryClass: AppBundle\Repository\GuanteRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        marca:
+            type: integer
+        descripcion:
+            type: string
+            length: 100
+        vencimiento:
+            type: date
+        libreDeTalco:
+            type: boolean
+            column: libre_de_talco
+        lote:
+            type: string
+            length: 256
+        cantidad:
+            type: integer
+    lifecycleCallbacks: {  }

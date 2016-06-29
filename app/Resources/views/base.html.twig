@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+        <script src="{{ asset('assets/js/jquery-2.2.3.min.js') }}"></script>
+        <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+
+        <!-- Select2 -->
+        <link rel="stylesheet" href="{{ asset('assets/css/select2.min.css') }}">
+        <script src="{{ asset('assets/js/select2.min.js') }}"></script>
+
+        <!-- Mis estilos -->
+        <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
+    </head>
+    <body>
+
+        <div class="col-md-2">
+            {% include 'menu.html.twig' %}
+        </div>
+        <div class="col-md-10">        
+            {% block body %}{% endblock %}
+        </div>
+
+    </body>
+
+
+    <script type="text/javascript">
+        $(".select2-combo").select2();
+    </script>
+</html>

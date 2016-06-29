@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Comprimido</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ comprimido.id }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ comprimido.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Marca</th>
+                <td>{{ comprimido.marca }}</td>
+            </tr>
+            <tr>
+                <th>Principioactivo</th>
+                <td>{{ comprimido.principioActivo }}</td>
+            </tr>
+            <tr>
+                <th>Peso</th>
+                <td>{{ comprimido.peso }}</td>
+            </tr>
+            <tr>
+                <th>Vencimiento</th>
+                <td>{% if comprimido.vencimiento %}{{ comprimido.vencimiento|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Lote</th>
+                <td>{{ comprimido.lote }}</td>
+            </tr>
+            <tr>
+                <th>Cantidad</th>
+                <td>{{ comprimido.cantidad }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('comprimido_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('comprimido_edit', { 'id': comprimido.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

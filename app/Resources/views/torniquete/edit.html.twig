@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Editar torniquete</h1>
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input type="submit" value="Editar" class="btn btn-primary" />
+    {{ form_end(edit_form) }}
+
+    <a href="{{ path('torniquete_index') }}" class="btn btn-primary">Volver a la lista</a>
+    {{ form_start(delete_form) }}
+        <input type="submit" value="Eliminar" class="btn btn-primary">
+    {{ form_end(delete_form) }}
+{% endblock %}

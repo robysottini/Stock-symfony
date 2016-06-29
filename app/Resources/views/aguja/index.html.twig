@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Aguja list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Capacidad</th>
+                <th>Vencimiento</th>
+                <th>Cantidad</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for aguja in agujas %}
+            <tr>
+                <td><a href="{{ path('aguja_show', { 'id': aguja.id }) }}">{{ aguja.id }}</a></td>
+                <td>{{ aguja.nombre }}</td>
+                <td>{{ aguja.capacidad }}</td>
+                <td>{% if aguja.vencimiento %}{{ aguja.vencimiento|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ aguja.cantidad }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('aguja_show', { 'id': aguja.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('aguja_edit', { 'id': aguja.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('aguja_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

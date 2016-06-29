@@ -1,0 +1,24 @@
+comprimido_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Comprimido:index" }
+    methods:  GET
+
+comprimido_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Comprimido:show" }
+    methods:  GET
+
+comprimido_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Comprimido:new" }
+    methods:  [GET, POST]
+
+comprimido_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Comprimido:edit" }
+    methods:  [GET, POST]
+
+comprimido_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Comprimido:delete" }
+    methods:  DELETE

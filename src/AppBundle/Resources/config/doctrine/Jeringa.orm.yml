@@ -1,0 +1,20 @@
+AppBundle\Entity\Jeringa:
+    type: entity
+    table: jeringas
+    repositoryClass: AppBundle\Repository\JeringaRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        marca:
+            type: integer
+        capacidad:
+            type: float
+        vencimiento:
+            type: date
+        cantidad:
+            type: integer
+    lifecycleCallbacks: {  }

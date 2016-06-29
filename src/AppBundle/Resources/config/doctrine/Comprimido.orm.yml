@@ -1,0 +1,29 @@
+AppBundle\Entity\Comprimido:
+    type: entity
+    table: comprimidos
+    repositoryClass: AppBundle\Repository\ComprimidoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombre:
+            type: string
+            length: 100
+        marca:
+            type: integer
+        principioActivo:
+            type: integer
+            column: principio_activo
+        peso:
+            type: float
+        vencimiento:
+            type: date
+        lote:
+            type: string
+            length: 256
+        cantidad:
+            type: integer
+    lifecycleCallbacks: {  }
