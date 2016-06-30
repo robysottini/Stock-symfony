@@ -1,45 +1,31 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Jeringa list</h1>
+    <h1>Jeringas</h1>
 
-    <table>
+    <table class="table table-bordered table-striped table-hover">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Marca</th>
                 <th>Capacidad</th>
                 <th>Vencimiento</th>
                 <th>Cantidad</th>
-                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for jeringa in jeringas %}
             <tr>
-                <td><a href="{{ path('jeringa_show', { 'id': jeringa.id }) }}">{{ jeringa.id }}</a></td>
                 <td>{{ jeringa.marca }}</td>
                 <td>{{ jeringa.capacidad }}</td>
                 <td>{% if jeringa.vencimiento %}{{ jeringa.vencimiento|date('Y-m-d') }}{% endif %}</td>
                 <td>{{ jeringa.cantidad }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('jeringa_show', { 'id': jeringa.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('jeringa_edit', { 'id': jeringa.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                    <a href="{{ path('jeringa_edit', { 'id': jeringa.id }) }}" class="btn btn-primary">Editar</a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('jeringa_new') }}">Create a new entry</a>
-        </li>
-    </ul>
+    <a href="{{ path('jeringa_new') }}" class="btn btn-primary">Nuevo jeringa</a>
 {% endblock %}

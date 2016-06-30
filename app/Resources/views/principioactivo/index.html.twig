@@ -1,39 +1,25 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>PrincipioActivo list</h1>
+    <h1>Principios activos</h1>
 
-    <table>
+    <table class="table table-bordered table-striped table-hover">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Nombre</th>
-                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-        {% for principioActivo in principioActivos %}
+        {% for principioActivo in principiosActivos %}
             <tr>
-                <td><a href="{{ path('principioactivo_show', { 'id': principioActivo.id }) }}">{{ principioActivo.id }}</a></td>
                 <td>{{ principioActivo.nombre }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('principioactivo_show', { 'id': principioActivo.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('principioactivo_edit', { 'id': principioActivo.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                    <a href="{{ path('principioactivo_edit', { 'id': principioActivo.id }) }}" class="btn btn-primary">Editar</a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('principioactivo_new') }}">Create a new entry</a>
-        </li>
-    </ul>
+    <a href="{{ path('principioactivo_new') }}" class="btn btn-primary">Nuevo principio activo</a>
 {% endblock %}

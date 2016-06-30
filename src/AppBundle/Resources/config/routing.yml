@@ -3,21 +3,13 @@ index:
     defaults: { _controller: "AppBundle:Default:index" }
     methods:  GET
 
-app_marca:
-    resource: "@AppBundle/Resources/config/routing/marca.yml"
-    prefix:   /marca
-
 app_aguja:
     resource: "@AppBundle/Resources/config/routing/aguja.yml"
     prefix:   /aguja
 
-app_torniquete:
-    resource: "@AppBundle/Resources/config/routing/torniquete.yml"
-    prefix:   /torniquete
-
-app_principioactivo:
-    resource: "@AppBundle/Resources/config/routing/principioactivo.yml"
-    prefix:   /principioactivo
+app_comprimido:
+    resource: "@AppBundle/Resources/config/routing/comprimido.yml"
+    prefix:   /comprimido
 
 app_guante:
     resource: "@AppBundle/Resources/config/routing/guante.yml"
@@ -27,6 +19,14 @@ app_jeringa:
     resource: "@AppBundle/Resources/config/routing/jeringa.yml"
     prefix:   /jeringa
 
-app_comprimido:
-    resource: "@AppBundle/Resources/config/routing/comprimido.yml"
-    prefix:   /comprimido
+app_marca:
+    resource: "@AppBundle/Resources/config/routing/marca.yml"
+    prefix:   /marca
+
+app_principioactivo:
+    resource: "@AppBundle/Resources/config/routing/principioactivo.yml"
+    prefix:   /principioactivo
+
+app_torniquete:
+    resource: "@AppBundle/Resources/config/routing/torniquete.yml"
+    prefix:   /torniquete

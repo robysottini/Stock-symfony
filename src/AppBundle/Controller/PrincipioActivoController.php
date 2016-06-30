@@ -22,10 +22,10 @@ class PrincipioActivoController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $principioActivos = $em->getRepository('AppBundle:PrincipioActivo')->findAll();
+        $principiosActivos = $em->getRepository('AppBundle:PrincipioActivo')->findAll();
 
         return $this->render('principioactivo/index.html.twig', array(
-            'principioActivos' => $principioActivos,
+            'principiosActivos' => $principiosActivos,
         ));
     }
 

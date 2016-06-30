@@ -1,39 +1,25 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Marca list</h1>
+    <h1>Marcas</h1>
 
-    <table>
+    <table class="table table-bordered table-striped table-hover">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Nombre</th>
-                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for marca in marcas %}
             <tr>
-                <td><a href="{{ path('marca_show', { 'id': marca.id }) }}">{{ marca.id }}</a></td>
                 <td>{{ marca.nombre }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('marca_show', { 'id': marca.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('marca_edit', { 'id': marca.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                    <a href="{{ path('marca_edit', { 'id': marca.id }) }}" class="btn btn-primary">Editar</a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('marca_new') }}">Create a new entry</a>
-        </li>
-    </ul>
+    <a href="{{ path('marca_new') }}" class="btn btn-primary">Nueva marca</a>
 {% endblock %}

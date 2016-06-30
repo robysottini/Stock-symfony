@@ -3,7 +3,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand">Stock de laboratorio</a>
+            <a class="navbar-brand" href="{{ url('index') }}">Administrador de stock</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
@@ -24,6 +24,13 @@
     <li><a href="{{ url('guante_index') }}">Guantes</a></li>
     <li><a href="{{ url('jeringa_index') }}">Jeringas</a></li>
     <li><a href="{{ url('torniquete_index') }}">Torniquetes</a></li>
-    <li><a href="{{ url('principioactivo_index') }}">Principios activos</a></li>
-    <li><a href="{{ url('marca_index') }}">Marcas</a></li>
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            Configuración <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="{{ url('marca_index') }}">Marcas</a></li>
+            <li><a href="{{ url('principioactivo_index') }}">Principios activos</a></li>
+        </ul>
+    </li>
 </ul>
