@@ -3,12 +3,8 @@
 {% block body %}
     <h1>Comprimido</h1>
 
-    <table>
+    <table class="table table-bordered table-striped table-hover">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ comprimido.id }}</td>
-            </tr>
             <tr>
                 <th>Nombre</th>
                 <td>{{ comprimido.nombre }}</td>
@@ -40,17 +36,9 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('comprimido_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('comprimido_edit', { 'id': comprimido.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+    <a href="{{ path('comprimido_index') }}" class="btn btn-primary">Volver a la lista</a>
+    <a href="{{ path('comprimido_edit', { 'id': comprimido.id }) }}" class="btn btn-primary">Editar</a>
+    {{ form_start(delete_form) }}
+        <input type="submit" value="Eliminar" class="btn btn-primary">
+    {{ form_end(delete_form) }}
 {% endblock %}

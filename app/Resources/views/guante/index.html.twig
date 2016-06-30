@@ -1,25 +1,22 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Guante list</h1>
+    <h1>Guantes</h1>
 
-    <table>
+    <table class="table table-bordered table-striped table-hover">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Marca</th>
                 <th>Descripcion</th>
                 <th>Vencimiento</th>
                 <th>Libredetalco</th>
                 <th>Lote</th>
                 <th>Cantidad</th>
-                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for guante in guantes %}
             <tr>
-                <td><a href="{{ path('guante_show', { 'id': guante.id }) }}">{{ guante.id }}</a></td>
                 <td>{{ guante.marca }}</td>
                 <td>{{ guante.descripcion }}</td>
                 <td>{% if guante.vencimiento %}{{ guante.vencimiento|date('Y-m-d') }}{% endif %}</td>
@@ -27,23 +24,12 @@
                 <td>{{ guante.lote }}</td>
                 <td>{{ guante.cantidad }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('guante_show', { 'id': guante.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('guante_edit', { 'id': guante.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                    <a href="{{ path('guante_edit', { 'id': guante.id }) }}" class="btn btn-primary">Editar</a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('guante_new') }}">Create a new entry</a>
-        </li>
-    </ul>
+    <a href="{{ path('guante_new') }}" class="btn btn-primary">Nuevo guante</a>
 {% endblock %}

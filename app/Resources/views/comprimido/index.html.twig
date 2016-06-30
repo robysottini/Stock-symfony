@@ -1,12 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Comprimido list</h1>
+    <h1>Comprimidos</h1>
 
-    <table>
+    <table class="table table-bordered table-striped table-hover">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Nombre</th>
                 <th>Marca</th>
                 <th>Principioactivo</th>
@@ -14,13 +13,11 @@
                 <th>Vencimiento</th>
                 <th>Lote</th>
                 <th>Cantidad</th>
-                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for comprimido in comprimidos %}
             <tr>
-                <td><a href="{{ path('comprimido_show', { 'id': comprimido.id }) }}">{{ comprimido.id }}</a></td>
                 <td>{{ comprimido.nombre }}</td>
                 <td>{{ comprimido.marca }}</td>
                 <td>{{ comprimido.principioActivo }}</td>
@@ -29,23 +26,12 @@
                 <td>{{ comprimido.lote }}</td>
                 <td>{{ comprimido.cantidad }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('comprimido_show', { 'id': comprimido.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('comprimido_edit', { 'id': comprimido.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                    <a href="{{ path('comprimido_edit', { 'id': comprimido.id }) }}" class="btn btn-primary">Editar</a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('comprimido_new') }}">Create a new entry</a>
-        </li>
-    </ul>
+    <a href="{{ path('comprimido_new') }}" class="btn btn-primary">Nuevo comprimido</a>
 {% endblock %}
