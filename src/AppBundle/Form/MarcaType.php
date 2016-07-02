@@ -24,8 +24,10 @@ class MarcaType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $opciones = array(
             'data_class' => 'AppBundle\Entity\Marca'
-        ));
+        );
+
+        $resolver->setDefaults($opciones);
     }
 }

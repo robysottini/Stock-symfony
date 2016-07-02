@@ -24,8 +24,10 @@ class PrincipioActivoType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $opciones = array(
             'data_class' => 'AppBundle\Entity\PrincipioActivo'
-        ));
+        );
+
+        $resolver->setDefaults($opciones);
     }
 }

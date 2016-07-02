@@ -27,8 +27,10 @@ class JeringaType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $opciones = array(
             'data_class' => 'AppBundle\Entity\Jeringa'
-        ));
+        );
+
+        $resolver->setDefaults($opciones);
     }
 }

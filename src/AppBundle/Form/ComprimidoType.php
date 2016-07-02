@@ -30,8 +30,10 @@ class ComprimidoType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $opciones = array(
             'data_class' => 'AppBundle\Entity\Comprimido'
-        ));
+        );
+
+        $resolver->setDefaults($opciones);
     }
 }
