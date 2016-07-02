@@ -1,6 +1,30 @@
 /**
  * Estilos de Roby Sottini.
  */
+
+
+/**
+ * Menú vertical desplegable. 
+ */
+header, main, footer {
+    padding-left: 240px;
+}
+
+@media only screen and (max-width : 992px) {
+    header, main, footer {
+        padding-left: 0;
+   }
+}
+
+/**
+ * Footer.
+ */
 body {
-	padding-top: 70px; /* Necesario para la barra de navegación estática. **/
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
 }

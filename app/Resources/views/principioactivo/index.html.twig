@@ -3,7 +3,7 @@
 {% block body %}
     <h1>Principios activos</h1>
 
-    <table class="table table-bordered table-striped table-hover">
+    <table class="bordered striped highlight responsive-table">
         <thead>
             <tr>
                 <th>Nombre</th>
@@ -14,12 +14,12 @@
             <tr>
                 <td>{{ principioActivo.nombre }}</td>
                 <td>
-                    <a href="{{ path('principioactivo_edit', { 'id': principioActivo.id }) }}" class="btn btn-primary">Editar</a>
+                    <a href="{{ path('principioactivo_edit', { 'id': principioActivo.id }) }}" class="btn waves-effect waves-light">Editar</a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('principioactivo_new') }}" class="btn btn-primary">Nuevo principio activo</a>
+    <a href="{{ path('principioactivo_new') }}" class="btn waves-effect waves-light">Nuevo principio activo</a>
 {% endblock %}

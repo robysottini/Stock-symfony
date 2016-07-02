@@ -3,7 +3,7 @@
 {% block body %}
     <h1>Marcas</h1>
 
-    <table class="table table-bordered table-striped table-hover">
+    <table class="bordered striped highlight responsive-table">
         <thead>
             <tr>
                 <th>Nombre</th>
@@ -14,12 +14,12 @@
             <tr>
                 <td>{{ marca.nombre }}</td>
                 <td>
-                    <a href="{{ path('marca_edit', { 'id': marca.id }) }}" class="btn btn-primary">Editar</a>
+                    <a href="{{ path('marca_edit', { 'id': marca.id }) }}" class="btn waves-effect waves-light">Editar</a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('marca_new') }}" class="btn btn-primary">Nueva marca</a>
+    <a href="{{ path('marca_new') }}" class="btn waves-effect waves-light">Nueva marca</a>
 {% endblock %}

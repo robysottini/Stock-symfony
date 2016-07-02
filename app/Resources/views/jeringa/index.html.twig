@@ -3,7 +3,7 @@
 {% block body %}
     <h1>Jeringas</h1>
 
-    <table class="table table-bordered table-striped table-hover">
+    <table class="bordered striped highlight responsive-table">
         <thead>
             <tr>
                 <th>Marca</th>
@@ -20,12 +20,12 @@
                 <td>{% if jeringa.vencimiento %}{{ jeringa.vencimiento|date('Y-m-d') }}{% endif %}</td>
                 <td>{{ jeringa.cantidad }}</td>
                 <td>
-                    <a href="{{ path('jeringa_edit', { 'id': jeringa.id }) }}" class="btn btn-primary">Editar</a>
+                    <a href="{{ path('jeringa_edit', { 'id': jeringa.id }) }}" class="btn waves-effect waves-light">Editar</a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('jeringa_new') }}" class="btn btn-primary">Nuevo jeringa</a>
+    <a href="{{ path('jeringa_new') }}" class="btn waves-effect waves-light">Nuevo jeringa</a>
 {% endblock %}

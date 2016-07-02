@@ -1,36 +1,44 @@
-<!-- Barra horizontal de navegación -->
+<header>
+    
+    <div class="navbar">
+        <nav>
+            <div class="container">
 
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="{{ url('index') }}">Administrador de stock</a>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <p class="navbar-text navbar-right">Desarrollado por 
-                    <a href="mailto:robysottini@gmail.com">Roberto Sottini</a>
-                </p>
-            </ul>
-        </div>
+                <!-- Barra horizontal de navegación -->
+
+                <div class="nav-wrapper">
+                    <a href="{{ url('index') }}" class="brand-logo">Administrador de stock</a>
+
+                    <!-- Ícono hamburguesa -->
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                </div>
+
+
+                <!-- Menú vertical desplegable -->
+
+                <ul class="side-nav fixed">
+                    <li class="bold"><a href="{{ url('aguja_index') }}" class="waves-effect waves-teal">Agujas</a></li>
+                    <li class="bold"><a href="{{ url('comprimido_index') }}" class="waves-effect waves-teal">Comprimidos</a></li>
+                    <li class="bold"><a href="{{ url('guante_index') }}" class="waves-effect waves-teal">Guantes</a></li>
+                    <li class="bold"><a href="{{ url('jeringa_index') }}" class="waves-effect waves-teal">Jeringas</a></li>
+                    <li class="bold"><a href="{{ url('torniquete_index') }}" class="waves-effect waves-teal">Torniquetes</a></li>
+                    <li class="no-padding">
+                        <ul class="collapsible collapsible-accordion">
+                            <li>
+                                <a class="collapsible-header">Configuración<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li class="bold"><a href="{{ url('marca_index') }}" class="waves-effect waves-teal">Marcas</a></li>
+                                        <li class="bold"><a href="{{ url('principioactivo_index') }}" class="waves-effect waves-teal">Principios activos</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
     </div>
-</nav>
 
-
-<!-- Barra vertical de botones -->
-
-<ul class="nav nav-pills nav-stacked">
-    <li><a href="{{ url('aguja_index') }}">Agujas</a></li>
-    <li><a href="{{ url('comprimido_index') }}">Comprimidos</a></li>
-    <li><a href="{{ url('guante_index') }}">Guantes</a></li>
-    <li><a href="{{ url('jeringa_index') }}">Jeringas</a></li>
-    <li><a href="{{ url('torniquete_index') }}">Torniquetes</a></li>
-    <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            Configuración <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu">
-            <li><a href="{{ url('marca_index') }}">Marcas</a></li>
-            <li><a href="{{ url('principioactivo_index') }}">Principios activos</a></li>
-        </ul>
-    </li>
-</ul>
+</header>

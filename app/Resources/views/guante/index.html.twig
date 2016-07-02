@@ -3,7 +3,7 @@
 {% block body %}
     <h1>Guantes</h1>
 
-    <table class="table table-bordered table-striped table-hover">
+    <table class="bordered striped highlight responsive-table">
         <thead>
             <tr>
                 <th>Marca</th>
@@ -24,12 +24,12 @@
                 <td>{{ guante.lote }}</td>
                 <td>{{ guante.cantidad }}</td>
                 <td>
-                    <a href="{{ path('guante_edit', { 'id': guante.id }) }}" class="btn btn-primary">Editar</a>
+                    <a href="{{ path('guante_edit', { 'id': guante.id }) }}" class="btn waves-effect waves-light">Editar</a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('guante_new') }}" class="btn btn-primary">Nuevo guante</a>
+    <a href="{{ path('guante_new') }}" class="btn waves-effect waves-light">Nuevo guante</a>
 {% endblock %}

@@ -5,11 +5,9 @@
         <title>{% block title %}Stock{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-        
-        <!-- Bootstrap -->
-        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+
+        <!-- jQuery -->
         <script src="{{ asset('assets/js/jquery-2.2.3.min.js') }}"></script>
-        <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
 
         <!-- Select2 -->
         <link rel="stylesheet" href="{{ asset('assets/css/select2.min.css') }}">
@@ -17,15 +15,26 @@
 
         <!-- Mis estilos -->
         <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
+
+        <!-- Materialize -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        {%- include "MaterializeBundle:Materialize:css.html.twig" -%}
+
     </head>
     <body>
+        {%- include "MaterializeBundle:Materialize:js.html.twig" -%}
 
-        <div class="col-md-2">
             {% include 'menu.html.twig' %}
-        </div>
-        <div class="col-md-10">        
-            {% block body %}{% endblock %}
-        </div>
+            
+            <main>
+                <div class="container">
+                    <div class="row">
+                        {% block body %}{% endblock %}
+                    </div>
+                </div>
+            </main>
+
+            {% include 'footer.html.twig' %}
 
     </body>
 

@@ -3,7 +3,7 @@
 {% block body %}
     <h1>Agujas</h1>
 
-    <table class="table table-bordered table-striped table-hover">
+    <table class="bordered striped highlight responsive-table">
         <thead>
             <tr>
                 <th>Nombre</th>
@@ -20,12 +20,12 @@
                 <td>{% if aguja.vencimiento %}{{ aguja.vencimiento|date('Y-m-d') }}{% endif %}</td>
                 <td>{{ aguja.cantidad }}</td>
                 <td>
-                    <a href="{{ path('aguja_edit', { 'id': aguja.id }) }}" class="btn btn-primary">Editar</a>
+                    <a href="{{ path('aguja_edit', { 'id': aguja.id }) }}" class="btn waves-effect waves-light">Editar</a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('aguja_new') }}" class="btn btn-primary">Nuevo aguja</a>
+    <a href="{{ path('aguja_new') }}" class="btn waves-effect waves-light">Nuevo aguja</a>
 {% endblock %}

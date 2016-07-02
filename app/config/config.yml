@@ -36,8 +36,8 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
-    form_themes: 
-        - bootstrap_3_horizontal_layout.html.twig
+    #form_themes: 
+        #- bootstrap_3_horizontal_layout.html.twig
 
 # Doctrine Configuration
 doctrine:
@@ -68,3 +68,26 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+#MaterializeBundle
+materialize:
+    local_js: '@AppBundle/Resources/public/js/materialize.min.js'
+    local_fonts_dir: '@AppBundle/Resources/public/fonts/'
+    local_css: '@AppBundle/Resources/public/css/materialize.min.css'
+    local_cdn: 'cdn.domain.com'
+    version: 0.97.0
+    html5: true
+    async: false
+
+# Assetic Configuration
+assetic:
+    debug: "%kernel.debug%"
+    use_controller: false
+    bundles: [MaterializeBundle]
+    #java: /usr/bin/java
+    filters:
+        cssrewrite: ~
+        #closure:
+        #    jar: "%kernel.root_dir%/Resources/java/compiler.jar"
+        #yui_css:
+        #    jar: "%kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar"
