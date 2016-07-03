@@ -2,7 +2,12 @@
 
 namespace AppBundle\Form;
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -14,14 +19,34 @@ class ComprimidoType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $opcionesMarca = array(
+            'class' => 'AppBundle:Marca', 
+            'attr'  =>  array(
+                'class' => 'select2-combo'
+            )
+        );
+
+        $opcionesPrincipioActivo = array(
+            'class' => 'AppBundle:PrincipioActivo', 
+            'attr'  =>  array(
+                'class' => 'select2-combo'
+            )
+        );
+
+        $opcionesVencimiento = array(
+            'label'  => 'Fecha de vencimiento',
+            'widget' => 'single_text',
+            'format' => 'yyyy-MM-dd'
+        );
+
         $builder
-            ->add('nombre')
-            ->add('marca')
-            ->add('principioActivo')
-            ->add('peso')
-            ->add('vencimiento', 'date')
-            ->add('lote')
-            ->add('cantidad')
+            ->add('nombre', TextType::class)
+            ->add('marca', EntityType::class, $opcionesMarca)
+            ->add('principioActivo', EntityType::class, $opcionesPrincipioActivo)
+            ->add('peso', NumberType::class)
+            ->add('vencimiento', DateType::class, $opcionesVencimiento)
+            ->add('lote', TextType::class)
+            ->add('cantidad', IntegerType::class)
         ;
     }
     

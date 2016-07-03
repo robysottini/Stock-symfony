@@ -2,7 +2,12 @@
 
 namespace AppBundle\Form;
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -14,13 +19,36 @@ class GuanteType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+
+        $opcionesMarca = array(
+            'class' => 'AppBundle:Marca', 
+            'attr'  =>  array(
+                'class' => 'select2-combo'
+            )
+        );
+
+        $opcionesDescripcion = array(
+            'label' => 'Descripción'
+        );
+
+        $opcionesVencimiento = array(
+            'label'  => 'Fecha de vencimiento',
+            'widget' => 'single_text',
+            'format' => 'yyyy-MM-dd'
+        );
+
+        $opcionesLibreDeTalco = array(
+            'label'    => 'Libre de talco',
+            'required' => false
+        );
+
         $builder
-            ->add('marca')
-            ->add('descripcion')
-            ->add('vencimiento', 'date')
-            ->add('libreDeTalco')
-            ->add('lote')
-            ->add('cantidad')
+            ->add('marca', EntityType::class, $opcionesMarca)
+            ->add('descripcion', TextType::class, $opcionesDescripcion)
+            ->add('vencimiento', DateType::class, $opcionesVencimiento)
+            ->add('libreDeTalco', CheckboxType::class, $opcionesLibreDeTalco)
+            ->add('lote', TextType::class)
+            ->add('cantidad', IntegerType::class)
         ;
     }
     

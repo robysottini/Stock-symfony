@@ -2,7 +2,9 @@
 
 namespace AppBundle\Form;
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -23,8 +25,8 @@ class TorniqueteType extends AbstractType
         );
 
         $builder
-            ->add('cantidad')
-            ->add('marca', null, $opcionesMarcas)
+            ->add('cantidad', IntegerType::class)
+            ->add('marca', EntityType::class, $opcionesMarcas)
         ;
     }
     
