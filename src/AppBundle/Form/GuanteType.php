@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -22,7 +23,7 @@ class GuanteType extends AbstractType
 
         $opcionesMarca = array(
             'class' => 'AppBundle:Marca', 
-            'attr'  =>  array(
+            'attr'  => array(
                 'class' => 'select2-combo'
             )
         );
@@ -42,6 +43,12 @@ class GuanteType extends AbstractType
             'required' => false
         );
 
+        $opcionesEnviar = array( 
+            'attr' => array(
+                'class' => 'btn waves-effect waves-light'
+            )
+        );
+
         $builder
             ->add('marca', EntityType::class, $opcionesMarca)
             ->add('descripcion', TextType::class, $opcionesDescripcion)
@@ -49,6 +56,7 @@ class GuanteType extends AbstractType
             ->add('libreDeTalco', CheckboxType::class, $opcionesLibreDeTalco)
             ->add('lote', TextType::class)
             ->add('cantidad', IntegerType::class)
+            ->add('crear', SubmitType::class, $opcionesEnviar)
         ;
     }
     

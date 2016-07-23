@@ -16,7 +16,8 @@
                 <td>{{ torniquete.marca }}</td>
                 <td>{{ torniquete.cantidad }}</td>
                 <td>
-                    <a href="{{ path('torniquete_edit', { 'id': torniquete.id }) }}" class="btn waves-effect waves-light">Editar</a>
+                    <a href="{{ path('torniquete_edit', { 'id': torniquete.id }) }}" class="btn waves-effect waves-light">
+                        <i class="material-icons left">edit</i>Editar</a>
                 </td>
             </tr>
         {% endfor %}
@@ -25,5 +26,10 @@
     <br>
     <br>
     
-    <a href="{{ path('torniquete_new') }}" class="btn waves-effect waves-light">Nuevo torniquete</a>
+    <div class="fixed-action-btn" style="bottom: 100px; right: 24px;">
+        <a href="{{ path('torniquete_new') }}" class="btn-floating btn-large waves-effect waves-light">
+            <i class="large material-icons">add_circle</i>
+        </a>
+    </div>
+    
 {% endblock %}

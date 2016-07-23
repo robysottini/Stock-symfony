@@ -28,3 +28,10 @@ body {
 main {
     flex: 1 0 auto;
 }
+
+/**
+ * Clase de prueba.
+ */
+.clase {
+    border:5px solid blue;
+}

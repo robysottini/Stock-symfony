@@ -4,14 +4,39 @@
     <h1>Nueva aguja</h1>
 
     {{ form_start(form) }}
-        {{ form_widget(form) }}
-        </br>
-        
-        <input type="submit" value="Crear" class="btn " />
-    {{ form_end(form) }}
-    </br>
-    </br>
-    </br>
 
-    <a href="{{ path('aguja_index') }}" class="btn waves-effect waves-light">Volver a la lista</a>
+        <div class="input-field">
+            {{ form_row(form.nombre) }}
+        </div>
+
+        <div class="input-field">
+            {{ form_row(form.capacidad) }}
+        </div>
+        <br>
+
+        <div>
+            {{ form_row(form.vencimiento) }}
+        </div>
+
+        <div class="input-field">
+            {{ form_row(form.cantidad) }}
+        </div>
+        <br>
+
+        <div class="">
+            {{ form_row(form.marca) }} <br/>
+        </div>
+
+        <button class="btn waves-effect waves-light" type="submit" name="action">Crear
+            <i class="material-icons left">add_circle</i>
+        </button>
+
+    {{ form_end(form) }}
+    <br/>
+    <br/>
+    <br/>
+
+    <a href="{{ path('aguja_index') }}" class="btn waves-effect waves-light">
+        <i class="material-icons left">arrow_back</i>Volver a la lista</a>
+
 {% endblock %}

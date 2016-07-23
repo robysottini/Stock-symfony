@@ -14,7 +14,8 @@
             <tr>
                 <td>{{ marca.nombre }}</td>
                 <td>
-                    <a href="{{ path('marca_edit', { 'id': marca.id }) }}" class="btn waves-effect waves-light">Editar</a>
+                    <a href="{{ path('marca_edit', { 'id': marca.id }) }}" class="btn waves-effect waves-light">
+                        <i class="material-icons left">edit</i>Editar</a>
                 </td>
             </tr>
         {% endfor %}
@@ -23,5 +24,10 @@
     <br>
     <br>
 
-    <a href="{{ path('marca_new') }}" class="btn waves-effect waves-light">Nueva marca</a>
+    <div class="fixed-action-btn" style="bottom: 100px; right: 24px;">
+        <a href="{{ path('marca_new') }}" class="btn-floating btn-large waves-effect waves-light">
+            <i class="large material-icons">add_circle</i>
+        </a>
+    </div>
+    
 {% endblock %}

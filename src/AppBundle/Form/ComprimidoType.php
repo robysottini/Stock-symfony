@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -21,14 +22,14 @@ class ComprimidoType extends AbstractType
     {
         $opcionesMarca = array(
             'class' => 'AppBundle:Marca', 
-            'attr'  =>  array(
+            'attr'  => array(
                 'class' => 'select2-combo'
             )
         );
 
         $opcionesPrincipioActivo = array(
             'class' => 'AppBundle:PrincipioActivo', 
-            'attr'  =>  array(
+            'attr'  => array(
                 'class' => 'select2-combo'
             )
         );
@@ -39,6 +40,12 @@ class ComprimidoType extends AbstractType
             'format' => 'yyyy-MM-dd'
         );
 
+        $opcionesEnviar = array( 
+            'attr'  => array(
+                'class' => 'btn waves-effect waves-light'
+            )
+        );
+
         $builder
             ->add('nombre', TextType::class)
             ->add('marca', EntityType::class, $opcionesMarca)
@@ -47,6 +54,7 @@ class ComprimidoType extends AbstractType
             ->add('vencimiento', DateType::class, $opcionesVencimiento)
             ->add('lote', TextType::class)
             ->add('cantidad', IntegerType::class)
+            ->add('crear', SubmitType::class, $opcionesEnviar)
         ;
     }
     

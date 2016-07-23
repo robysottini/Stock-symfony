@@ -20,7 +20,8 @@
                 <td>{% if jeringa.vencimiento %}{{ jeringa.vencimiento|date('Y-m-d') }}{% endif %}</td>
                 <td>{{ jeringa.cantidad }}</td>
                 <td>
-                    <a href="{{ path('jeringa_edit', { 'id': jeringa.id }) }}" class="btn waves-effect waves-light">Editar</a>
+                    <a href="{{ path('jeringa_edit', { 'id': jeringa.id }) }}" class="btn waves-effect waves-light">
+                        <i class="material-icons left">edit</i>Editar</a>
                 </td>
             </tr>
         {% endfor %}
@@ -29,5 +30,10 @@
     <br>
     <br>
 
-    <a href="{{ path('jeringa_new') }}" class="btn waves-effect waves-light">Nueva jeringa</a>
+    <div class="fixed-action-btn" style="bottom: 100px; right: 24px;">
+        <a href="{{ path('jeringa_new') }}" class="btn-floating btn-large waves-effect waves-light">
+            <i class="large material-icons">add_circle</i>
+        </a>
+    </div>
+    
 {% endblock %}

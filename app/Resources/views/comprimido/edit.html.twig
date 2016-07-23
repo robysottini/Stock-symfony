@@ -5,20 +5,23 @@
 
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
-        </br>
+        <br/>
 
         <input type="submit" value="Editar" class="btn" />
     {{ form_end(edit_form) }}
-    </br>
-    </br>
-    </br>
-    </br>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
 
-    <a href="{{ path('comprimido_index') }}" class="btn waves-effect waves-light">Volver a la lista</a>
-    </br>
-    </br>
+    <a href="{{ path('comprimido_index') }}" class="btn waves-effect waves-light">
+        <i class="material-icons left">arrow_back</i>Volver a la lista</a>
+    <br/>
+    <br/>
     
     {{ form_start(delete_form) }}
-        <input type="submit" value="Eliminar" class="btn ">
+        <button class="btn waves-effect waves-light" type="submit" name="action">Eliminar
+            <i class="material-icons left">delete</i>
+        </button>
     {{ form_end(delete_form) }}
 {% endblock %}

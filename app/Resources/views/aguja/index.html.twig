@@ -2,7 +2,7 @@
 
 {% block body %}
     <h1>Agujas</h1>
-
+    
     <table class="bordered striped highlight responsive-table">
         <thead>
             <tr>
@@ -20,7 +20,8 @@
                 <td>{% if aguja.vencimiento %}{{ aguja.vencimiento|date('Y-m-d') }}{% endif %}</td>
                 <td>{{ aguja.cantidad }}</td>
                 <td>
-                    <a href="{{ path('aguja_edit', { 'id': aguja.id }) }}" class="btn waves-effect waves-light">Editar</a>
+                    <a href="{{ path('aguja_edit', { 'id': aguja.id }) }}" class="btn waves-effect waves-light">
+                        <i class="material-icons left">edit</i>Editar</a>
                 </td>
             </tr>
         {% endfor %}
@@ -29,5 +30,10 @@
     <br>
     <br>
 
-    <a href="{{ path('aguja_new') }}" class="btn waves-effect waves-light">Nueva aguja</a>
+    <div class="fixed-action-btn" style="bottom: 100px; right: 24px;">
+        <a href="{{ path('aguja_new') }}" class="btn-floating btn-large waves-effect waves-light">
+            <i class="large material-icons">add_circle</i>
+        </a>
+    </div>
+    
 {% endblock %}

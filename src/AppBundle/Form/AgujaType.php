@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -21,16 +22,26 @@ class AgujaType extends AbstractType
     {
         $opcionesMarca = array(
             'class' => 'AppBundle:Marca', 
-            'attr'  =>  array(
-                'class' => 'select2-combo'
+            'attr'  => array(
+                'class' => 'browser-default'
             )
         );
 
         $opcionesVencimiento = array(
             'label'  => 'Fecha de vencimiento',
             'widget' => 'single_text',
-            'format' => 'yyyy-MM-dd'
+            'format' => 'yyyy-MM-dd', 
+            'attr'   => array(
+                'class' => 'datepicker'
+            )
         );
+
+        $opcionesEnviar = array( 
+            'attr'  => array(
+                'class' => 'btn waves-effect waves-light'
+            )
+        );
+
         $builder
             ->add('nombre', TextType::class)
             ->add('capacidad', NumberType::class)
